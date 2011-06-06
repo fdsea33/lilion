@@ -1,0 +1,11 @@
+%h1 Pétitions
+
+-for petition in Petition.order(:started_at)
+  .petition-intro
+    %h2=petition.title
+    %h2.subtitle=petition.subtitle
+    =markup(petition.intro)
+
+-if current_user
+  .petition-intro=link_to("Nouvelle pétition", new_petition_url)
+    

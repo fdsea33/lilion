@@ -1,0 +1,8 @@
+=form_tag({:action=>:create}, {:class=>"form new"}) do
+  .fields.flex
+    =render :partial=>partial
+    .end
+  .actions
+    =submit_tag(tl(options[:submit]||:create), :disable_with=>tl(:please_wait))
+    =link_to tl(options[:cancel]||:cancel), :back
+

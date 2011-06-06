@@ -1,0 +1,13 @@
+$blue: #555;
+$margin: 24px;
+$borderw: 2px;
+
+html { background: lighten($blue, 55%) }
+.page { width: 58em; padding: $margin; margin: $margin auto; background: lighten($blue, 65%); border: $borderw solid $blue; box-shadow: 0 0 35px #DDD; -moz-box-shadow: 0 0 35px #DDD; -webkit-box-shadow: 0 0 35px #DDD; }
+
+h1 { padding-bottom: $margin; margin-bottom: $margin; border-bottom: $borderw solid $blue; }
+
+hr { border: $borderw/2 solid $blue; height: 0; margin: $margin 0; }
+.legals { text-align: center; padding-top: $margin; margin-top: $margin; border-top: $borderw solid $blue;}
+
+.menu { float: right; background: lighten($blue, 55%); padding: $margin/3 $margin/2; border: $borderw solid $blue;}
