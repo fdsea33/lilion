@@ -1,0 +1,18 @@
+=render :partial=>"petitions/cart", :locals=>{:petition=>@petition}
+
+%table.signatures
+  %thead
+    %tr
+      %th=Signature.human_attribute_name(:nature)
+      %th=Signature.human_attribute_name(:name)
+      %th=Signature.human_attribute_name(:city)
+      %th=Signature.human_attribute_name(:job)
+      %th=Signature.human_attribute_name(:signed_on)
+  %tbody
+    -for signature in @petition.valid_signatures
+      %tr
+        %td.nat=signature.human_nature
+        %td=signature.label
+        %td=signature.city
+        %td=signature.job
+        %td.dat=I18n.localize(signature.signed_on)

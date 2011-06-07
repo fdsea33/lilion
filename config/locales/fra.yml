@@ -1,12 +1,216 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 fra:
+  about:
+    authors: ['Brice Texier']
+    dir: 'ltr'
+    iso2: 'fr'
+    name: 'Français'
+  date:
+    abbr_day_names: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam']
+    abbr_month_names: ['', 'janv', 'févr', 'mars', 'avr', 'mai', 'juin', 'juil', 'août', 'sept', 'oct', 'nov', 'déc']
+    day_names: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
+    formats:
+      default: '%d/%m/%Y'
+      legal: '%d %B %Y'
+      long: '%d %B %Y'
+      month_letter: '%d %B %Y'
+      short: '%b %d'
+    month_names: ['', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+    order: [:day, :month, :year]
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        many: 'about %{count} hours'
+        one: 'about 1 hour'
+      about_x_months:
+        many: 'about %{count} months'
+        one: 'about 1 month'
+      about_x_years:
+        many: 'about %{count} years'
+        one: 'about 1 year'
+      half_a_minute: 'demi-minute'
+      less_than_x_minutes:
+        many: 'less than %{count} minutes'
+        one: 'less than a minute'
+      less_than_x_seconds:
+        many: 'moins de %{count} secondes'
+        one: 'moins d''une seconde'
+      over_x_years:
+        many: 'over %{count} years'
+        one: 'over 1 year'
+      x_days:
+        many: '%{count} days'
+        one: '1 day'
+      x_minutes:
+        many: '%{count} minutes'
+        one: '1 minute'
+      x_months:
+        many: '%{count} months'
+        one: '1 month'
+      x_seconds:
+        many: '%{count} secondes'
+        one: '1 seconde'
+  kame:
+    columns: 'Colonnes'
+    export:
+      false_value: 'FAUX'
+      formats:
+        csv: 'CSV'
+        ods: 'Classeur ODF'
+        xcsv: 'CSV Excel'
+      title: 'Exporter'
+      true_value: 'VRAI'
+    export_as: 'Exporter en %{exported}...'
+    menu: 'Menu'
+    next: 'Suivant'
+    no_records: 'Aucun enregistrement'
+    previous: 'Précédent'
+    x_per_page:
+      one: '%{count} par page'
+      other: '%{count} par page'
+  number:
+    currency:
+      format:
+        delimiter: ','
+        format: '%u%n'
+        precision: 2
+        separator: '.'
+        unit: '$'
+    format:
+      delimiter: ' '
+      precision: 3
+      separator: ','
+    human:
+      format:
+        delimiter: ''
+        precision: 1
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ' et '
+      sentence_connector: 'et'
+      two_words_connector: ' et '
+      words_connector: ', '
+  time:
+    am: 'am'
+    formats:
+      default: '%d %b. %Y à %H:%M:%S'
+      long: '%B %d, %Y %H:%M'
+      short: '%d %b %H:%M'
+    pm: 'pm'
+
+
+
+  activerecord:
+    errors:
+      messages:
+        accepted: '%{attribute} doit être accepté'
+        blank: '%{attribute} ne peut pas être vide'
+        confirmation: '%{attribute} est différent du champ de confirmation'
+        contains_blank_line: '%{attribute} contient une ligne vide' #!
+        contains_blank_page: '%{attribute} contient une page vide' #!
+        empty: '%{attribute} ne peut pas être vide'
+        equal_to: '%{attribute} doit être égal à %{count}'
+        even: '%{attribute} doit être impair'
+        exclusion: '%{attribute} est reservé'
+        greater_than: '%{attribute} doit être plus grand que %{count}'
+        greater_than_or_equal_to: '%{attribute} doit être plus grand ou égal à %{count}'
+        has_an_invalid_nature: '%{attribute} contient un modèle inconnu %{nature} (page %{page})' #!
+        has_an_invalid_partner: '%{attribute} contient un partenaire inconnu %{partner} (page %{page})' #!
+        included_in: 'La valeur de %{attribute} doit être comprise entre %{minimum} et %{maximum}'
+        inclusion: '%{attribute} n''est pas inclus dans la liste'
+        invalid: '%{attribute} est invalide'
+        invalid_at: '%{attribute} est invalide. Erreur près de %{error}'
+        invalid_token: '%{attribute} est invalide. Symbole inconnu %{error}. Les symboles acceptés sont %{accepted}.'
+        less_than: '%{attribute} doit être inférieur à %{count}'
+        less_than_or_equal_to: '%{attribute} doit être inférieur ou égal à %{count}'
+        not_a_number: '%{attribute} n''est pas un nombre'
+        nothing_to_pay: 'Il n''y a rien à payer. Si vous voulez enregistrer un acompte, n''oubliez pas de le préciser.'
+        odd: '%{attribute} doit être pair'
+        posterior: 'La date %{attribute} doit être postérieure à %{to}'
+        record_has_been_already_validated: 'La pièce a été validée et ne peut plus être modifiée'
+        record_invalid: 'Validations échouées : %{errors}'
+        taken: '%{attribute} a déjà été pris'
+        too_long: '%{attribute} est trop long (%{count} caractères maximum)'
+        too_short: '%{attribute} est trop court (%{count} caractères minimum)'
+        wrong_length: '%{attribute} n''est pas d''une bon longueur (%{count} caractères)'
+      template:
+        body: 'Il y a eu des problèmes avec les champs suivants :'
+        header:
+          one: '1 erreur a empêché l''enregistrement (%{model})'
+          other: '%{count} erreurs ont empéché l''enregistrement (%{model})'
+
+  attributes:
+    body: "Corps"
+    city: "Commune"
+    commitment: "Texte d'engagement"
+    email: "Adresse e-mail"
+    first_name: "Prénom"
+    job: "Profession/Activité"
+    last_name: "Nom (de famille)"
+    name: "Nom"
+    password: "Mot de passe"
+    password_confirmation: "Confirmation du mot de passe"
+    signed_on: "Signée le"
+    subheading: "Sur-titre"
+    subtitle: "Sous-titre"
+    title: "Titre"
+   
+  models:
+    signature:
+      natures:
+        association: "Association"
+        company: "Entreprise"
+        madam: "Madame"
+        other: "Autre"
+        sir: "Monsieur"
+
+  notifications:
+    access_denied: "Accès refusé"
+    unvalid_user_name_or_password: "Nom d'utilisateur ou mot de passe invalide"
+    confirmation_sent: "Un email de confirmation vous a été envoyé. Il vous faudra cliquer sur le lien qu'il contient pour terminer la procédure."
+    inexistent_petition: "La pétition demandée n'existe pas."
+    inexistent_signature: "La validation de cette signature n'est pas possible car elle n'existe pas."
+    petition_no_longer_signable: "Cette pétition n'accepte plus de signatures"
+    signature_accepted: "Votre signature a été validée et apparait maintenant dans la liste des signataires."
+    signature_corrupted: "Votre signature ne peut pas être validée car la clé jointe est fausse."
+
+
   actions:
+    people:
+      edit: "Modifier la personne %{label}"
+      index: "Personnes"
+      new: "Nouvelle personne"
     petitions:
+      edit: "Modifier la pétition : %{title}"
       index: "Pétitions"
       new: "Nouvelle pétition"
+      show: "Pétition : %{title}"
+    sessions:
+      new: "Connexion à l'administration"
+    signatures:
+      index: 
+        one: "Liste des signataires"
+        other: "Liste des %{count} signataires"
+      new: "Nouvelle signature"
+      
 
   labels:
+    are_you_sure: "Êtes-vous sûr(e) ?"
     cancel: "Annuler"
     create: "Créer"
+    notifications:
+      error: "Une erreur est survenue"
+      info: "Information"
+      success: "Opération réalisée avec succès"
+      warning: "Attention !"
+    please_wait: "Merci de patienter..."
+    update: "Modifier"
+    x_signatures: 
+      zero: "aucune signature"
+      one: "%{count} signature"
+      other: "%{count} signatures"

@@ -26,10 +26,17 @@ ActiveRecord::Schema.define(:version => 20110606123016) do
 
   create_table "petitions", :force => true do |t|
     t.string   "name"
+    t.string   "subheading"
     t.string   "title"
     t.string   "subtitle"
     t.text     "intro"
     t.text     "body"
+    t.text     "commitment"
+    t.text     "contact"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.string   "sender"
     t.boolean  "published"
     t.boolean  "active"
@@ -43,16 +50,20 @@ ActiveRecord::Schema.define(:version => 20110606123016) do
 
   create_table "signatures", :force => true do |t|
     t.integer  "petition_id"
+    t.string   "number"
     t.string   "nature"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "language"
+    t.string   "job"
+    t.string   "city"
     t.text     "infos"
     t.string   "ip_address"
     t.string   "hashed_key"
     t.string   "checked_at"
     t.boolean  "locked"
+    t.date     "signed_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

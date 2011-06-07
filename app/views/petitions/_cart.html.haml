@@ -1,0 +1,7 @@
+.cart
+  =image_tag @petition.logo.url(:normal) if @petition.logo.file?
+  -unless petition.subheading.blank?
+    %h2.subheading=petition.subheading
+  %h1.title=link_to(petition.title, petition_url(petition))
+  -unless petition.subtitle.blank?
+    %h2.subtitle=petition.subtitle

@@ -1,0 +1,24 @@
+=semantic_form_for @petition do |form|
+
+  =form.inputs :name => "Textes" do
+    =form.input :title
+    =form.input :subheading
+    =form.input :subtitle
+    =form.input :intro
+    =form.input :body
+    =form.input :commitment
+    =form.input :contact
+    =form.input :logo
+
+  =form.inputs :name => "Avancé" do
+    =form.input :name, :hint => "Exemple: petition-0, non-a-la-guerre"
+    =form.input :started_at
+    =form.input :stopped_at
+    =form.input :published
+    =form.input :active
+    =form.input :sender, :hint=>"Utilisée dans les notifications par mail"
+ 
+  =form.buttons do
+    =form.commit_button :button_html => { :class => "primary" }
+   
+  

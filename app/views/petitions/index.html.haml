@@ -1,9 +1,16 @@
--for petition in Petition.order(:started_at)
-  .petition-intro
+-if current_user
+  =link_to("Nouvelle pétition", new_petition_url, :class=>"petition-intro")
+
+-for petition in @petitions
+  =link_to(petition_url(petition), :class=>"petition-intro") do
+    =image_tag(petition.logo.url(:small)) if petition.logo.file?
     %h2=petition.title
     %h2.subtitle=petition.subtitle
     =markup(petition.intro)
+    %em.footer="Mise en ligne du #{I18n.localize(petition.started_at.to_date, :format=>:long)} au #{I18n.localize(petition.stopped_at.to_date, :format=>:long)} : #{tl(:x_signatures, :count=>petition.valid_signatures.count)}."
 
--if current_user
-  .petition-intro=link_to("Nouvelle pétition", new_petition_url)
+-if @petitions.size.zero?
+  .cart
+    %h1.title="Aucune pétition consultable"
+
     

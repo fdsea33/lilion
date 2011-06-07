@@ -3,7 +3,7 @@ Lilion::Application.routes.draw do
   resources :petitions do
     resources :signatures, :only=>[:index, :new, :create] do
       member do
-        get 'certify'
+        get :certify
       end
     end
   end

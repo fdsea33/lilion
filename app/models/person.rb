@@ -1,7 +1,17 @@
 require "digest/sha2"
 class Person < ActiveRecord::Base
-
+  attr_readonly :name
   validates_confirmation_of :password
+  validates_uniqueness_of :name, :email
+  validates_format_of :name, :with=>/^[a-z0-9\_\.]+$/
+
+  def label
+    "#{first_name} #{last_name} (#{name})".strip
+  end
+
+  def to_param
+    self.name
+  end
 
   def password
     @password
@@ -24,6 +34,10 @@ class Person < ActiveRecord::Base
       user = nil unless user.authenticated?(password.to_s)
     end
     return user
+  end
+
+  def self.give_password(length=8, mode=:normal)
+    return self.generate_password(length, mode)
   end
 
   private

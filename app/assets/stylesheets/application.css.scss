@@ -1,13 +1,139 @@
-$blue: #555;
+$blue: #576;
 $margin: 24px;
 $borderw: 2px;
 
-html { background: lighten($blue, 55%) }
-.page { width: 58em; padding: $margin; margin: $margin auto; background: lighten($blue, 65%); border: $borderw solid $blue; box-shadow: 0 0 35px #DDD; -moz-box-shadow: 0 0 35px #DDD; -webkit-box-shadow: 0 0 35px #DDD; }
+$shadoww: 35px;
+$shadowc: #BCB;
 
-h1 { padding-bottom: $margin; margin-bottom: $margin; border-bottom: $borderw solid $blue; }
+@mixin shadow {
+  box-shadow: 0 0 $shadoww $shadowc; 
+  -moz-box-shadow: 0 0 $shadoww $shadowc; 
+  -webkit-box-shadow: 0 0 $shadoww $shadowc;
+}
+
+a:link, a:visited, a:hover, a:focus, a:active { color: $blue; }
+a:hover { text-decoration: none; }
+
+html { background: lighten($blue, 55%) }
+
+.page { width: 60em; margin: $margin auto; background: lighten($blue, 65%); border: $borderw solid $blue; @include shadow; }
+
+.in-page { padding: $margin; }
+
+h1.auto { padding-bottom: $margin; margin-bottom: $margin; border-bottom: $borderw solid $blue; font-size: $margin;}
 
 hr { border: $borderw/2 solid $blue; height: 0; margin: $margin 0; }
-.legals { text-align: center; padding-top: $margin; margin-top: $margin; border-top: $borderw solid $blue;}
+.legals { text-align: center; padding: $margin/4; margin-top: $margin/4; border-top: $borderw solid $blue; background: $blue}
+.legals, .legals *, .legals a { color: lighten($blue, 55%); }
 
-.menu { float: right; background: lighten($blue, 55%); padding: $margin/3 $margin/2; border: $borderw solid $blue;}
+.menu { float: right; background: lighten($blue, 55%); padding: $margin/4 0;  border: $borderw solid $blue;
+        * { padding: $margin/4; }
+}
+
+.inputs label {width: 20%}
+
+.login { width: 60%; margin: 0 auto; }
+
+
+form.formtastic { 
+  input[type="email"], input[type="text"], input[type="password"], textarea { 
+    padding:2px; 
+  }
+  input[type="submit"] { 
+    padding: 2px 4px;
+  }
+
+  fieldset.inputs { 
+    border: 1px solid #DDD; 
+    padding: $margin; 
+    margin-bottom: $margin;
+  }
+}
+form.formtastic fieldset.inputs > legend {padding: 2px 4px; margin-left: -2px;}
+form.formtastic fieldset.inputs > legend * { font-size: $margin*0.7; font-weight: bold;}
+
+@mixin buttons { 
+  float: none; 
+  padding: 2px; 
+  text-align: center; 
+  input[type="submit"] { padding: 4px 8px; }
+}
+
+.page form.formtastic fieldset.buttons { 
+  padding: 0; 
+  li { @include buttons }
+}
+
+.page .buttons { @include buttons }
+
+a.petition-intro { display: block; border: $borderw solid $blue; padding: $margin/2; margin-bottom: $margin; background: lighten($blue, 55%); 
+  img { float: left; margin: 0 8px 8px 0; border: none; }
+  *:last-child { margin-bottom: 0 }
+}
+a.petition-intro, a.petition-intro * { text-decoration: none; color: $blue;}
+a.petition-intro:hover { @include shadow; }
+
+.cart { 
+   h1, h2 { text-align: center; margin: $margin 0;}
+   h1, h1 * { font-size: 32px; text-decoration: none;}
+   h2, h2 * { font-size: 20px; }
+   img { float:left; margin: 0 1em 1em 0; }
+}
+
+.sign {width: 50%;  background: lighten($blue, 55%); border: $borderw solid $blue; padding: $margin/2 $margin; margin: $margin auto; display: block; text-decoration: none; }
+.sign:hover { @include shadow; border-color: black }
+.sign:hover, .sign:hover * { color: black;}
+.sign, .sign * { font-size: 16px; text-decoration: none; color: $blue; font-weight: bold;}
+.sign *:last-child { margin-bottom: 0; }
+.sign.sg-center { text-align: center}
+
+.sign2, .sign2 * { font-size: 16px; text-decoration: none; font-weight: bold; }
+
+p { text-align: justify; }
+p, ul, ol, dl { margin: 2px 0 1em; }
+ul, ol { padding: 0 0 0 3ex;}
+
+ul.users { 
+  li { padding: 8px 0; }
+}
+
+table.signatures { 
+  width: 100%;
+  border-collapse: collapse;
+  th { padding: 8px; }
+  tbody { 
+    tr { 
+      td { 
+        padding: 8px;
+        border-top: 1px solid $blue;
+      }
+      .nat, .dat { text-align:center; }
+    }
+  }
+}
+
+.flash { 
+  padding: 8px 8px 8px 48px; 
+  margin: 0 0 $margin; 
+  vertical-align: middle; 
+  background-position: 8px center; 
+  background-repeat: no-repeat; 
+  background-color: #FFF; 
+  color: black; 
+  border: $borderw solid black; 
+  h3 { font-size: 13px; font-weight: bold; padding: 0 0 2px; margin-bottom: 2px; border-bottom: 1px dotted #999; }
+  p { margin: 2px 0;}
+  ul { 
+    padding-left: 20px;
+    li { list-style-type: square; }
+  }
+}
+html>body .flash { height:auto; min-height:32px; } 
+.flash.error       { border-color: #D10; color: #D10; background-color: #FFDFD0; background-image: url(/assets/notification-error.png); }
+.flash.warning     { border-color: #E60; color: #E60; background-color: #FFEECC; background-image: url(/assets/notification-warning.png); }
+.flash.success     { border-color: #5A1; color: #5A1; background-color: #EEFFCC; background-image: url(/assets/notification-success.png); }
+.flash.information { border-color: #777; color: #777; background-color: #F5F5F5; background-image: url(/assets/notification-info.png); }
+.flash.error *       { color: #D10; }
+.flash.warning *     { color: #E60; }
+.flash.success *     { color: #5A1; }
+.flash.information * { color: #777; }

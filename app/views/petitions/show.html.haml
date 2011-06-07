@@ -1,0 +1,18 @@
+-if current_user
+  .menu
+    =link_to "Modifier", edit_petition_url(@petition)
+    =link_to "Supprimer", petition_url(@petition), :method=>:delete, :confirm=>tl(:are_you_sure)
+
+=render :partial=>"cart", :locals=>{:petition=>@petition}
+
+=markup(@petition.intro)
+
+-unless @petition.body.blank?
+  =markup(@petition.body)
+
+=link_to(new_petition_signature_url(@petition), :class=>"sign") do
+  =markup(@petition.commitment)
+
+=mail_to("", "Envoyer le lien par email", :subject=>@petition.title, :body=>petition_url(@petition), :class=>"sign sg-center")
+
+=link_to("Consulter la liste des signataires", petition_signatures_url(@petition), :class=>"sign sg-center")

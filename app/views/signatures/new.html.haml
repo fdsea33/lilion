@@ -1,0 +1,20 @@
+=render :partial=>"petitions/cart", :locals=>{:petition=>@signature.petition}
+
+.sign=markup(@signature.petition.commitment)
+
+=semantic_form_for [@petition, @signature] do |form|
+
+  =form.semantic_errors
+
+  =form.inputs :name => "Informations publiques" do
+    =form.input :nature, :label=>"Titre", :required=>true, :collection => Signature.natures_hash.sort
+    =form.input :last_name
+    =form.input :first_name
+    =form.input :job
+    =form.input :city
+
+  =form.inputs :name => "Informations complémentaires et privées" do
+    =form.input :email, :hint=>"Cette adresse sera utilisée pour la confirmation de votre signature"
+
+  =form.buttons do
+    =form.commit_button :label=>"Je signe", :button_html => { :class => "primary" }

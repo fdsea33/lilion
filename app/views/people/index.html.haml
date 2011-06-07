@@ -1,0 +1,11 @@
+%ul.users
+  %li=link_to "Nouvel utilisateur", new_person_url
+  -for person in @people
+    %li
+      .menu
+        =link_to "Modifier", edit_person_url(person)
+        =link_to "Supprimer", person_url(person), :method=>:delete, :confirm=>tl(:are_you_sure)
+      %h2=person.label
+      .email=mail_to person.email
+      .dates="Créé le "+I18n.localize(person.created_at)+", modifié le "+I18n.localize(person.updated_at)
+

@@ -1,0 +1,17 @@
+=semantic_form_for @person do |form|
+
+  =form.inputs :name => "Informations personnelles" do
+    =form.input :first_name
+    =form.input :last_name
+    =form.input :receive_notifications
+
+  =form.inputs :name => "Compte" do
+    =form.input :name
+    =form.input :password
+    =form.input :password_confirmation
+    =form.input :email
+ 
+  =form.buttons do
+    =form.commit_button :button_html => { :class => "primary" }
+   
+  

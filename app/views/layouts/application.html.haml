@@ -7,9 +7,19 @@
     =csrf_meta_tags
   %body
     .page
-      -if current_user
-        .menu
-          =link_to("Se déconnecter", session_url, :method=>:delete, :confirm=>tl(:are_you_sure))
-      %h1=title
-      =yield
-      .legals Lilion 0.0.1
+      .in-page
+        -if current_user
+          .menu
+            =link_to("Personnes", people_url)
+            =link_to("Se déconnecter", session_url, :method=>:delete, :confirm=>tl(:are_you_sure))
+        %h1.auto=title
+        =notification_tag(:error)
+        =notification_tag(:warning)
+        =notification_tag(:info)
+        =notification_tag(:success)
+        =yield
+      .legals
+        =link_to "Liste des pétitions", root_url
+        %span=" - "
+        =link_to("Lilion 0.0.1", new_session_url)
+        

@@ -1,0 +1,15 @@
+.login
+  =form_tag({:action=>:create}, :class=>"formtastic session") do
+    %fieldset.inputs
+      %legend
+        %span="Veuillez-vous identifier"
+      %ol
+        %li
+          %label=Person.human_attribute_name(:name)
+          =text_field_tag(:name, params[:name])
+        %li
+          %label=Person.human_attribute_name(:password)
+          =password_field_tag(:password, params[:password])
+      .buttons
+        =submit_tag("Se connecter")
+

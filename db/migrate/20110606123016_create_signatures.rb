@@ -8,11 +8,14 @@ class CreateSignatures < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :language
+      t.string :job
+      t.string :city
       t.text :infos
       t.string :ip_address
       t.string :hashed_key
       t.string :checked_at
       t.boolean :locked
+      t.date :signed_on
       t.timestamps
     end
   end
