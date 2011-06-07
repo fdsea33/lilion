@@ -24,7 +24,7 @@ h1.auto { padding-bottom: $margin; margin-bottom: $margin; border-bottom: $borde
 
 hr { border: $borderw/2 solid $blue; height: 0; margin: $margin 0; }
 .legals { text-align: center; padding: $margin/4; margin-top: $margin/4; border-top: $borderw solid $blue; background: $blue}
-.legals, .legals *, .legals a { color: lighten($blue, 55%); }
+.legals, .legals *, .legals a { color: lighten($blue, 55%); font-size: 11px;}
 
 .menu { float: right; background: lighten($blue, 55%); padding: $margin/4 0;  border: $borderw solid $blue;
         * { padding: $margin/4; }
