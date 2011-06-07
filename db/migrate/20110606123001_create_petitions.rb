@@ -5,9 +5,11 @@ class CreatePetitions < ActiveRecord::Migration
       t.string :name
       t.string :title
       t.string :subtitle
+      t.text :intro
       t.text :body
       t.string :sender
       t.boolean :published
+      t.boolean :active
       t.timestamp :started_at
       t.timestamp :stopped_at
       t.integer :creator_id, :references=>:people

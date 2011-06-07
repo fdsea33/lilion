@@ -1,6 +1,9 @@
 source 'http://rubygems.org'
 
+gem 'rake', '0.8.7'
+
 gem 'rails', '3.1.0.rc1'
+gem 'formtastic', '1.2.4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -8,6 +11,7 @@ gem 'rails', '3.1.0.rc1'
 gem 'pg'
 
 # Asset template engines
+gem 'haml', '3.0.25'
 gem 'json'
 gem 'sass'
 gem 'coffee-script'

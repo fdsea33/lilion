@@ -4,4 +4,10 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require formtastic
+
 */
+
+
+* { padding: 0; margin: 0; font-family: Arial, sans-serif;}
+div, a, p, td, th, pre, li, dd, dl, dt, b, span, strong, em, i, input, label { font-size: 13px; }

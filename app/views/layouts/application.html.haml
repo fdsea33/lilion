@@ -1,7 +1,7 @@
 !!! XML utf-8
 %html
   %head
-    %title Lilion
+    %title=title
     =stylesheet_link_tag    "application"
     =javascript_include_tag "application"
     =csrf_meta_tags
@@ -10,6 +10,6 @@
       -if current_user
         .menu
           =link_to("Se déconnecter", session_url, :method=>:delete, :confirm=>tl(:are_you_sure))
-          
+      %h1=title
       =yield
       .legals Lilion 0.0.1
