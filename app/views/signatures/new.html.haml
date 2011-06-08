@@ -1,7 +1,7 @@
 =render :partial=>"petitions/cart", :locals=>{:petition=>@signature.petition}
 
-.sign=markup(@signature.petition.commitment)
-
+.commitment=markup(@signature.petition.commitment)
+.spacer
 =semantic_form_for [@petition, @signature] do |form|
 
   =form.semantic_errors

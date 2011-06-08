@@ -35,6 +35,8 @@ hr { border: $borderw/2 solid $blue; height: 0; margin: $margin 0; }
 
 .login { width: 60%; margin: 0 auto; }
 
+.spacer { height: $margin; clear: both;}
+
 
 form.formtastic { 
   input[type="email"], input[type="text"], input[type="password"], textarea { 
