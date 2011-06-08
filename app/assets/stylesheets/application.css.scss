@@ -92,7 +92,7 @@ a.petition-intro:hover { @include shadow; }
   * { font-size: 16px; text-decoration: none; color: $red; font-weight: bold;}
  }
 
-.arrow-down { height: 80px; width: 80px; margin: 0 auto; background: $red url(/assets/arrow-down.png) no-repeat; }
+.arrow-down { height: 80px; width: 80px; margin: 0 auto; background: $red url(../assets/arrow-down.png) no-repeat; }
 
 .sign {width: 50%; background: lighten($blue, 55%); border: $borderw solid $blue; padding: $margin/2 $margin; margin: $margin auto; display: block; text-decoration: none; }
 .sign:hover { @include shadow; border-color: black }
@@ -143,10 +143,10 @@ table.signatures {
   }
 }
 html>body .flash { height:auto; min-height:32px; } 
-.flash.error       { border-color: #D10; color: #D10; background-color: #FFDFD0; background-image: url(/assets/notification-error.png); }
-.flash.warning     { border-color: #E60; color: #E60; background-color: #FFEECC; background-image: url(/assets/notification-warning.png); }
-.flash.success     { border-color: #5A1; color: #5A1; background-color: #EEFFCC; background-image: url(/assets/notification-success.png); }
-.flash.information { border-color: #777; color: #777; background-color: #F5F5F5; background-image: url(/assets/notification-info.png); }
+.flash.error       { border-color: #D10; color: #D10; background-color: #FFDFD0; background-image: url(../assets/notification-error.png); }
+.flash.warning     { border-color: #E60; color: #E60; background-color: #FFEECC; background-image: url(../assets/notification-warning.png); }
+.flash.success     { border-color: #5A1; color: #5A1; background-color: #EEFFCC; background-image: url(../assets/notification-success.png); }
+.flash.information { border-color: #777; color: #777; background-color: #F5F5F5; background-image: url(../assets/notification-info.png); }
 .flash.error *       { color: #D10; }
 .flash.warning *     { color: #E60; }
 .flash.success *     { color: #5A1; }
