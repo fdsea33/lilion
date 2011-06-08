@@ -1,4 +1,5 @@
 $blue: #576;
+$red: #A32;
 $margin: 24px;
 $borderw: 2px;
 
@@ -80,7 +81,20 @@ a.petition-intro:hover { @include shadow; }
    img { float:left; margin: 0 1em 1em 0; }
 }
 
-.sign {width: 50%;  background: lighten($blue, 55%); border: $borderw solid $blue; padding: $margin/2 $margin; margin: $margin auto; display: block; text-decoration: none; }
+.commitment { 
+  width: 50%;
+  background: lighten($red, 55%); 
+  border: $borderw solid $red; 
+  padding: $margin/2 $margin; 
+  margin: $margin auto 0; 
+  display: block;
+
+  * { font-size: 16px; text-decoration: none; color: $red; font-weight: bold;}
+ }
+
+.arrow-down { height: 80px; width: 80px; margin: 0 auto; background: $red url(/assets/arrow-down.png) no-repeat; }
+
+.sign {width: 50%; background: lighten($blue, 55%); border: $borderw solid $blue; padding: $margin/2 $margin; margin: $margin auto; display: block; text-decoration: none; }
 .sign:hover { @include shadow; border-color: black }
 .sign:hover, .sign:hover * { color: black;}
 .sign, .sign * { font-size: 16px; text-decoration: none; color: $blue; font-weight: bold;}

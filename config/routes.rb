@@ -1,14 +1,19 @@
 Lilion::Application.routes.draw do
 
-  resources :petitions do
+
+  resource :session, :only=>[:new, :create, :destroy]
+
+  resources :people
+
+  match '/je-signe/:petition_id' => "signatures#new", :as=>:sign_petition, :via=>:get
+
+  resources :petitions, :path=>"/" do
     resources :signatures, :only=>[:index, :new, :create] do
       member do
         get :certify
       end
     end
   end
-  resources :people
-  resource :session, :only=>[:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

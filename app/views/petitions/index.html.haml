@@ -3,6 +3,10 @@
 
 -for petition in @petitions
   =link_to(petition_url(petition), :class=>"petition-intro") do
+    -if current_user
+      .menu
+        =link_to "Modifier", edit_petition_url(petition)
+        =link_to "Supprimer", petition_url(petition), :method=>:delete, :confirm=>tl(:are_you_sure)
     =image_tag(petition.logo.url(:small)) if petition.logo.file?
     %h2=petition.title
     %h2.subtitle=petition.subtitle

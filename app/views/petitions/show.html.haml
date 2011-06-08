@@ -10,8 +10,11 @@
 -unless @petition.body.blank?
   =markup(@petition.body)
 
-=link_to(new_petition_signature_url(@petition), :class=>"sign") do
-  =markup(@petition.commitment)
+.commitment=markup(@petition.commitment)
+
+.arrow-down
+
+=link_to("Je signe la pétition", sign_petition_url(@petition), :class=>"sign sg-center")
 
 =mail_to("", "Envoyer le lien par email", :subject=>@petition.title, :body=>petition_url(@petition), :class=>"sign sg-center")
 

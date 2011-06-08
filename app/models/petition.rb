@@ -7,6 +7,7 @@ class Petition < ActiveRecord::Base
 
   validates_uniqueness_of :name
   validates_format_of :name, :with=>/^[a-z\-0-9]+$/
+  validates_exclusion_of :name, :in=>%w( petitions signatures people session je-signe new )
   validates_presence_of :title, :intro, :name, :sender, :commitment
 
   before_validation do
