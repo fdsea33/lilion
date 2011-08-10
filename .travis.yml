@@ -4,6 +4,7 @@ rvm:
 
 before_script:
   - "mv -f config/database.travis.yml config/database.yml"
+  - "psql -c 'create database lilion_test;' -U postgres >/dev/null"
 
 script: "bundle exec rake db:drop db:create db:migrate test"
 
