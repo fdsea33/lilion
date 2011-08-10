@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rake', '0.8.7'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc5'
 gem 'formtastic', '1.2.4'
 
 # Bundle edge Rails instead:
@@ -16,8 +16,9 @@ gem 'json'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'jquery-rails'
+
+gem 'therubyracer'
 
 gem 'paperclip'
 

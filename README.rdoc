@@ -4,3 +4,7 @@ Lilion is a web application based on Ruby on Rails. It permits to manage basic p
 
 == Home page
 https://github.com/burisu/lilion
+
+
+
+https://secure.travis-ci.org/burisu/lilion.png
