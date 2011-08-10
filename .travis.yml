@@ -2,6 +2,9 @@ rvm:
   - 1.9.2
   - 1.8.7
 
+before_script:
+  - "mv -f config/database.travis.yml config/database.yml"
+
 script: "bundle exec rake db:drop db:create db:migrate test"
 
 notifications:
