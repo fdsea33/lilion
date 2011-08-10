@@ -1,6 +1,6 @@
 rvm:
-  - 1.9.2
   - 1.8.7
+  - 1.9.2
 
 before_script:
   - "mv -f config/database.travis.yml config/database.yml"
