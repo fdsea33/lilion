@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 require "digest/sha2"
 class Person < ActiveRecord::Base
   attr_readonly :name
   validates_confirmation_of :password
   validates_uniqueness_of :name, :email
   validates_format_of :name, :with=>/^[a-z0-9\_\.]+$/
+  validates_presence_of :password, :on=>:create
 
   def label
     "#{first_name} #{last_name} (#{name})".strip
