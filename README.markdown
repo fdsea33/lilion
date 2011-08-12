@@ -7,4 +7,4 @@ Home page
 ---------
 https://github.com/burisu/lilion
 
-https://secure.travis-ci.org/burisu/lilion.png
+[![Build Status](https://secure.travis-ci.org/burisu/lilion.png)](https://secure.travis-ci.org/burisu/lilion)
