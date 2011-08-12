@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def render_form(options={})
     operation = action_name.to_sym
     operation = (operation==:create ? :new : operation==:update ? :edit : operation)
-    partial    = options[:partial]||'form'
+    partial   = options[:partial]||'form'
     render(:template=>options[:template]||"forms/#{operation}", :locals=>{:operation=>operation, :partial=>partial, :options=>options})
   end
 
