@@ -1,0 +1,10 @@
+Lilion <- Lil'ion <- Little-ion <- Petit-ion <- Petition
+========================================================
+
+Lilion is a web application based on Ruby on Rails. It permits to manage basic petitions.
+
+Home page
+---------
+https://github.com/burisu/lilion
+
+https://secure.travis-ci.org/burisu/lilion.png
