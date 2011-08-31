@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rake', '0.8.7'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0'
 gem 'formtastic', '1.2.4'
 
 # Bundle edge Rails instead:
