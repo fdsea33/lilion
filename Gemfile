@@ -1,33 +1,38 @@
 source 'http://rubygems.org'
 
-gem 'rake', '0.8.7'
-
-gem 'rails', '3.1.4'
-gem 'formtastic', '1.2.4'
+gem 'rails', '3.2.13'
+gem 'formtastic'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
-# Asset template engines
-gem 'haml', '3.0.25'
-gem 'json'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
+gem 'haml'
+gem 'paperclip'
 gem 'jquery-rails'
 
-gem 'therubyracer'
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'compass-rails'
+  gem 'turbo-sprockets-rails3'
+  gem 'oily_png'
+  gem 'jquery-turbolinks'
 
-gem 'paperclip'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'therubyracer', :platform => :ruby
 
-# Use unicorn as the web server
-# gem 'unicorn'
+  gem 'uglifier', '>= 1.0.3'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug'
+group :development do
+  gem 'rack-mini-profiler'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rails_best_practices'
+  gem 'thin'
+end
 

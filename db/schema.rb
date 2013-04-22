@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -20,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20110606123016) do
     t.string   "salt"
     t.string   "hashed_password"
     t.boolean  "receive_notifications"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "petitions", :force => true do |t|
@@ -44,8 +45,8 @@ ActiveRecord::Schema.define(:version => 20110606123016) do
     t.datetime "stopped_at"
     t.integer  "creator_id"
     t.integer  "updater_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "signatures", :force => true do |t|
@@ -64,8 +65,8 @@ ActiveRecord::Schema.define(:version => 20110606123016) do
     t.string   "checked_at"
     t.boolean  "locked"
     t.date     "signed_on"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
